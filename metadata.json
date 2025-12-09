@@ -1,0 +1,7 @@
+{
+  "name": "Earvan",
+  "description": "A hearing enhancement application turning earphones into hearing aids.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
