@@ -23,7 +23,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ user, onLogout, on
   // State
   const [isAssistOn, setIsAssistOn] = useState(true);
   const [mode, setMode] = useState<EnvironmentMode>('QUIET');
-  const [isTestingAudio, setIsTestingAudio] = useState(false);
+  // const [isTestingAudio, setIsTestingAudio] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
 
   useEffect(() => {
@@ -62,15 +62,15 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ user, onLogout, on
     audioEngine.setBypass(!isAssistOn);
   }, [mode, isAssistOn]);
 
-  const toggleTestAudio = async () => {
-    if (isTestingAudio) {
-      await audioEngine.stopTestAudio();
-      setIsTestingAudio(false);
-    } else {
-      audioEngine.startTestAudio();
-      setIsTestingAudio(true);
-    }
-  };
+  // const toggleTestAudio = async () => {
+  //   if (isTestingAudio) {
+  //     await audioEngine.stopTestAudio();
+  //     setIsTestingAudio(false);
+  //   } else {
+  //     audioEngine.startTestAudio();
+  //     setIsTestingAudio(true);
+  //   }
+  // };
 
   const startVisualizer = () => {
     const canvas = canvasRef.current;
@@ -269,7 +269,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ user, onLogout, on
                 <Button variant="outline" onClick={onEditProfile} className="text-xs h-10 border-dashed">
                   <Sliders className="w-3 h-3 mr-2" /> Adjust EQ
                 </Button>
-                <Button 
+                {/* <Button 
                    variant={isTestingAudio ? 'secondary' : 'primary'} 
                    onClick={toggleTestAudio} 
                    className="text-xs h-10"
@@ -277,7 +277,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ user, onLogout, on
                 >
                   {isTestingAudio ? <StopCircle className="w-3 h-3 mr-2" /> : <PlayCircle className="w-3 h-3 mr-2" />}
                   {isTestingAudio ? 'Stop Test' : 'Test Audio'}
-                </Button>
+                </Button> */}
              </div>
            </div>
         </div>
